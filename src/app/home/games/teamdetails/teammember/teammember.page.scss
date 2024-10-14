@@ -1,0 +1,45 @@
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gambar {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* Center the image */
+}
+
+ion-item {
+  --inner-padding-start: 0;
+}
+
+ion-avatar {
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+ion-grid {
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#container {
+  background-image: url('/assets/img/bg5.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  position: relative; 
+  min-height: 100vh; 
+  padding: 20px; 
+  display: flex; 
+  flex-direction: column; 
+}

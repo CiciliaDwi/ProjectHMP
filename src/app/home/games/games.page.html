@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>What We Play?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card *ngFor="let game of games">
+      <img class="gambar" [alt]="game.title" [src]="game.image">
+      <ion-card-header>
+        <ion-card-title>{{ game.title }}</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        {{ game.description }}
+      </ion-card-content>
+  
+      <div class="game-buttons">
+        <ion-button [routerLink]="['/home/games/achievement', game.title]">Achievement</ion-button>
+        <ion-button (click)="changeTeam(game)" [routerLink]="['/home/games/teamdetails']">
+          Teams
+        </ion-button>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

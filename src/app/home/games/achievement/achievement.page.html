@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Achievements for {{ selectedGameTitle }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div id="container">
+  <ion-card>
+    <ion-item>
+      <ion-label>Filter by Year</ion-label>
+      <ion-select [(ngModel)]="selectedYear" (ionChange)="filterAchievements()">
+        <ion-select-option value="all">All Years</ion-select-option>
+        <ion-select-option *ngFor="let year of years" [value]="year">{{ year }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-card *ngIf="filteredAchievements.length > 0; else noAchievements">
+      <ion-item *ngFor="let achievement of filteredAchievements">
+        <ion-thumbnail slot="start">
+          <img [src]="achievement.url" alt="Achievement Image">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ achievement.description }}</h2>
+          <p>{{ achievement.year }} - {{ achievement.team }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <!-- Jika tidak ada pencapaian untuk game yang dipilih -->
+    <ng-template #noAchievements>
+      <ion-item>
+        <ion-label>No achievements available for {{ selectedGameTitle }}</ion-label>
+      </ion-item>
+    </ng-template>
+  </ion-card>
+</div>

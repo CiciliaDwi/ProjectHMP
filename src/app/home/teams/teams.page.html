@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Who We Are?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card>
+      <ion-card>
+        <img class="gambar" alt="evos"
+          src="https://iblindonesia.com/image/1040x585/20210916180909-57a494f6-a9ed-4e89-9e0d-998d59e5696e.jpeg" />
+        <ion-card-header>
+          <ion-card-title>Who We Are</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          EVOS Esports (briefly known as Zero Latitude) is a professional esports organisation based in Jakarta,
+          Indonesia. It has competitive teams in Arena of Valor, Apex Legends, Free Fire, Mobile Legends: Bang Bang, PUBG
+          Mobile and League of Legends: Wild Rift.
+  
+          The organisation previously had a League of Legends team competing in the Vietnam Championship Series (VCS), the
+          highest level of competitive League of Legends in the country. The team became VCS champions (a title held only
+          by the GIGABYTE Marines at the time) on 7 April 2018, a feat accomplished during their first appearance in the
+          league. This qualified them for the 2018 Mid-Season Invitational (MSI), where they performed above expectations
+          against other more well-known international teams.
+        </ion-card-content>
+  
+        <div class="tombol">
+          <ion-button (click)="increaseLikes()">
+            <ion-icon slot="end" name="heart"></ion-icon>
+            {{ likes }}
+          </ion-button>
+        </div>
+      </ion-card>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,33 @@
+.tombol {
+    float: right;
+}
+
+.gambar {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+ion-card {
+    background-color: #660d50;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+#container {
+    background-image: url('/assets/img/bg6.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+ion-button:hover {
+    color: #d5f1c7;
+}

@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      Informatics E-Sport
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-item routerLink="/profile">
+        <ion-button>
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container"> 
+    <ion-card>
+      <ion-item routerLink="games">
+        <ion-icon name="game-controller-outline" slot="start"></ion-icon>
+        <ion-card-header>
+          <ion-card-title>What We Play?</ion-card-title>
+        </ion-card-header>
+      </ion-item>
+    </ion-card>
+  
+    <ion-card>
+      <ion-item routerLink="teams">
+        <ion-icon name="people-outline" slot="start"></ion-icon>
+        <ion-card-header>
+          <ion-card-title>Who We Are</ion-card-title>
+        </ion-card-header>
+      </ion-item>
+    </ion-card>
+  
+    <ion-card>
+      <ion-item routerLink="schedule">
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <ion-card-header>
+          <ion-card-title>Our Schedule</ion-card-title>
+        </ion-card-header>
+      </ion-item>
+    </ion-card>
+  </div>
+  
+</ion-content>

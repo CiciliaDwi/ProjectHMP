@@ -1,0 +1,29 @@
+#content {
+    background-image: url('/assets/img/bg5.png'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 100%; 
+}
+
+.agaknaik {
+    margin-top: -60px;
+    z-index: 1; 
+}
+
+.tengah_atasberjarak {
+    text-align: center;
+    margin-top: 60px;
+}
+
+ion-avatar {
+    width: 120px;
+    height: 120px;
+    z-index: 2; 
+    position: relative;
+}
+
+#frame {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

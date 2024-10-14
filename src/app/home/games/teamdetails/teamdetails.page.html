@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/games"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Team Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card>
+<img class="gambar" alt="Selected game image" [src]="selectedGameImage">
+    <ion-accordion *ngFor="let tim of tims" toggleIcon="null">
+      <ion-item slot="header" color="warning" (click)="navigateToTeamMember()">
+        <ion-label color="light">
+          {{ tim.tim }}
+        </ion-label>
+      </ion-item>
+    </ion-accordion>
+    </ion-card>
+  </div>
+</ion-content>

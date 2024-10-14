@@ -1,0 +1,57 @@
+#namatim {
+  float: right;
+}
+
+.date-col h3 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+  color: #3880ff;
+}
+
+.date-col p {
+  font-size: 18px;
+  margin: 0;
+  color: #aaaaaa;
+}
+
+.details-col {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+.details-col h2 {
+  margin: 0; 
+  font-size: 20px; 
+}
+
+.details-col p {
+  margin: 0; 
+  font-size: 16px; 
+  color: grey; 
+}
+
+ion-card {
+   /* Jarak antara kartu */
+  background-color: #1c1c1c; 
+  border-radius: 10px; 
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s; 
+}
+ion-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+}
+
+#container {
+  background-image: url('/assets/img/bg6.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  position: relative; 
+  min-height: 100vh; 
+  padding: 20px; 
+  display: flex; 
+  flex-direction: column; 
+}
