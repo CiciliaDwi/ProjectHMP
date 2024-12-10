@@ -1,11 +1,26 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScheduleserviceService {
 
-  constructor() { }
+  link = "https://ubaya.xyz/hybrid/160422148/";
+
+  constructor(private http: HttpClient) { }
+
+  login(p_username: string, p_password: string) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+
+    body.set('username', p_username);
+    body.set('password', p_password);
+    const urlEncodedData = body.toString();
+    return this.http.post(
+      this.link + "login_project.php", urlEncodedData, { headers });
+  }
 
 
   schedules = [
