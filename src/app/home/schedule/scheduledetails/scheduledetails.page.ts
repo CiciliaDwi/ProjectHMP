@@ -30,8 +30,8 @@ export class ScheduledetailsPage implements OnInit {
 
   async notifyMe() {
     const alert = await this.alertController.create({
-      message: this.isNotified ? 'Notification canceled.' : 'Notification created.',
-      buttons: ['OK']
+      message: this.isNotified ? 'Notification canceled.' : 'Notifikasi Sudah Dibuat.',
+      buttons: ['OK', 'CANCEL']
     });
     await alert.present();
     this.isNotified = !this.isNotified;

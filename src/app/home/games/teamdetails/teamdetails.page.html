@@ -10,7 +10,9 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <ion-card>
-<img class="gambar" alt="Selected game image" [src]="selectedGameImage">
+      
+    </ion-card>
+    <img class="gambar" alt="Selected game image" [src]="selectedGameImage">
     <ion-accordion *ngFor="let tim of tims" toggleIcon="null">
       <ion-item slot="header" color="warning" (click)="navigateToTeamMember()">
         <ion-label color="light">
@@ -18,6 +20,5 @@
         </ion-label>
       </ion-item>
     </ion-accordion>
-    </ion-card>
   </div>
 </ion-content>

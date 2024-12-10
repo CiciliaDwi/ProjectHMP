@@ -38,14 +38,7 @@ export class GamesPage implements OnInit {
   ngOnInit() {
   }
 
-  viewAchievements(gameTitle: string) {
-    this.router.navigate(['/home/games/achievement', { gameTitle: gameTitle }]);
-  }
-
-
-  goToAchievement(index: number) {
-    this.router.navigate(['/home/games/achievement', index]);
-  }
+  
   changeTeam(game: Game) {
     this.router.navigate(['/home/games/teamdetails'],
       { state: { selectedGame: game } });

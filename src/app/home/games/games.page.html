@@ -20,7 +20,7 @@
       </ion-card-content>
   
       <div class="game-buttons">
-        <ion-button [routerLink]="['/home/games/achievement', game.title]">Achievement</ion-button>
+        <ion-button color="warning" [routerLink]="['/home/games/achievement', game.title]">Achievement</ion-button>
         <ion-button (click)="changeTeam(game)" [routerLink]="['/home/games/teamdetails']">
           Teams
         </ion-button>
