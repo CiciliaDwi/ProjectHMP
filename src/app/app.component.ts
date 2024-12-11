@@ -18,6 +18,10 @@ export class AppComponent {
     this.fname = localStorage.getItem("app_fname") ?? ''
     this.username = localStorage.getItem("app_username") ?? ''
     this.lname = localStorage.getItem("app_lname") ?? ''
+
+    if(this.fname != '') {
+      this.router.navigate(['/home/games']);
+    }
   }
 
   login() {
@@ -36,5 +40,17 @@ export class AppComponent {
           alert(response.message)
         }
       });
+  }
+
+  logout() {
+    this.username = ""
+    this.fname = ""
+    this.lname = ""
+    this.password = ""
+    
+    localStorage.removeItem("app_username")
+    localStorage.removeItem("app_fname")
+    localStorage.removeItem("app_lname")
+    localStorage.removeItem("app_password")
   }
 }

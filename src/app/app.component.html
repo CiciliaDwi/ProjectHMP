@@ -1,6 +1,6 @@
 <ion-app>
-  
-  <ion-router-outlet *ngIf="fname" id="main-content"></ion-router-outlet>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
   <ion-menu content-id="main-content">
     <ion-header>
       <ion-toolbar>
@@ -10,22 +10,21 @@
     <ion-content class="ion-padding">
       <ion-list>
         <ion-menu-toggle>
-          <ion-item routerLink="/home">
-            <ion-icon name="home" slot="start"></ion-icon>
-            <ion-label>Home</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-        <ion-menu-toggle>
           <ion-item routerLink="/setting">
             <ion-icon name="settings" slot="start"></ion-icon>
             <ion-label>Settings</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-button (click)="logout()" color="danger" expand="block">Logout</ion-button>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>
 
-  <ion-tabs *ngIf="fname">
+  <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="games" routerLink="/home/games">
         <ion-icon name="game-controller-outline"></ion-icon>
@@ -45,16 +44,15 @@
   </ion-tabs>
 
   <ion-content *ngIf="!fname" class="ion-padding">
-    <img src="https://ubaya.xyz/hybrid/miftah/pasta.jpg" />
+    <img src="https://ubaya.xyz/hybrid/160422148/images/icon.jpg" class="small-image" />
     <ion-card>
-       <ion-item>
-          <ion-input [(ngModel)]="username" label="Username" labelPlacement="floating" />
-       </ion-item>
-       <ion-item>
-          <ion-input [(ngModel)]="password" type="password" label="Password" labelPlacement="floating" />
-       </ion-item>
-       <ion-button expand="block" (click)="login()">Login</ion-button>
+      <ion-item>
+        <ion-input [(ngModel)]="username" label="Username" labelPlacement="floating" />
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="password" type="password" label="Password" labelPlacement="floating" />
+      </ion-item>
+      <ion-button expand="block" (click)="login()">Login</ion-button>
     </ion-card>
   </ion-content>
-
 </ion-app>

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ScheduleserviceService {
 
-  link = "https://ubaya.xyz/hybrid/160422148/";
+link = "https://ubaya.xyz/pwa/pwa160422148/";
 
   constructor(private http: HttpClient) { }
 
