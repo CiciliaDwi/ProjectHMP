@@ -22,7 +22,18 @@ link = "https://ubaya.xyz/pwa/pwa160422148/";
       this.link + "login_project.php", urlEncodedData, { headers });
   }
 
+  ReadGame(p_image: string, p_title: string, p_description: string) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('image', p_image);
+    body.set('title', p_title);
+    body.set('description', p_description);
+    const urlEncodedData = body.toString();
+    return this.http.post(
+      this.link + "games.php", urlEncodedData, { headers });
+  }
 
+  //hapus schedules, pindah ke database 
   schedules = [
     {
       img: 'https://static.invenglobal.com/upload/image/2021/10/13/r1634161987104320.jpeg',
