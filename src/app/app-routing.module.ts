@@ -22,7 +22,15 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },  {
+    path: 'applyteam',
+    loadChildren: () => import('./applyteam/applyteam.module').then( m => m.ApplyteamPageModule)
+  },
+  {
+    path: 'newapplyteam',
+    loadChildren: () => import('./newapplyteam/newapplyteam.module').then( m => m.NewapplyteamPageModule)
   }
+
 ];
 
 @NgModule({

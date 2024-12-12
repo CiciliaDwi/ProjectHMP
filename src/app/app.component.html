@@ -8,16 +8,30 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-list>
+      <ion-list *ngIf="fname">
         <ion-menu-toggle>
-          <ion-item routerLink="/setting">
-            <ion-icon name="settings" slot="start"></ion-icon>
-            <ion-label>Settings</ion-label>
+          <ion-item>
+            <ion-img src="https://i.pravatar.cc/300?img=15"></ion-img>
+          </ion-item>
+          <ion-item>
+            Welcome, 
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item>
-            <ion-button (click)="logout()" color="danger" expand="block">Logout</ion-button>
+          <ion-item routerLink="/applyteam">
+            <ion-icon name="people-outline" slot="start"></ion-icon>
+            <ion-label>Apply Team</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/profile">
+            <ion-icon name="people-outline" slot="start"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item >
+            <ion-button color="warning" (click)="logout()">Logout</ion-button>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
