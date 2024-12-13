@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ScheduleserviceService } from 'src/app/scheduleservice.service';
 
 interface Game {
@@ -21,10 +21,19 @@ export class GamesPage implements OnInit {
   desc = ""
   games: Game[] = [];
 
-  constructor(private router: Router, private scheduleService: ScheduleserviceService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private scheduleService: ScheduleserviceService) { }
 
   ngOnInit() {
-    
+    // this.route.params.subscribe(params => {
+    //   this.title = params['index'] //mengambil index di link address + karena di approuting pakai index
+    //   this.scheduleService.ReadGame(this.image, this.title, this.desc).subscribe(
+    //     (data) => {
+    //       this.image = data.image;
+    //       this.title = data.title;
+    //       this.desc = data.desc;
+    //     }
+    //   );
+    // });
   }
 
   

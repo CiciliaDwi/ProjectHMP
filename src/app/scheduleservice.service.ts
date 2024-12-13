@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ScheduleserviceService {
 
-link = "https://ubaya.xyz/pwa/pwa160422148/";
+link = "https://ubaya.xyz/hybrid/160422148/";
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +21,10 @@ link = "https://ubaya.xyz/pwa/pwa160422148/";
     return this.http.post(
       this.link + "login_project.php", urlEncodedData, { headers });
   }
+
+  // ReadGames(id: number): Observable<any> {
+  //   return this.http.get(this.link + "games.php?idgame=" + id);
+  // }
 
   ReadGame(p_image: string, p_title: string, p_description: string) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
