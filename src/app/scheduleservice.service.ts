@@ -22,19 +22,8 @@ link = "https://ubaya.xyz/hybrid/160422148/";
       this.link + "login_project.php", urlEncodedData, { headers });
   }
 
-  // ReadGames(id: number): Observable<any> {
-  //   return this.http.get(this.link + "games.php?idgame=" + id);
-  // }
-
-  ReadGame(p_image: string, p_title: string, p_description: string) {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    const body = new URLSearchParams();
-    body.set('image', p_image);
-    body.set('title', p_title);
-    body.set('description', p_description);
-    const urlEncodedData = body.toString();
-    return this.http.post(
-      this.link + "games.php", urlEncodedData, { headers });
+  ReadGame(): Observable<any> {
+    return this.http.get(this.link + "games.php");
   }
 
   //hapus schedules, pindah ke database 

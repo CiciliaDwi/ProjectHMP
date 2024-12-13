@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ScheduleserviceService } from 'src/app/scheduleservice.service';
+import { HttpClient } from '@angular/common/http';
 
 interface Game {
   image: string;
@@ -20,24 +21,19 @@ export class GamesPage implements OnInit {
   title = ""
   desc = ""
   games: Game[] = [];
+  link = "https://ubaya.xyz/hybrid/160422148/"
 
-  constructor(private route: ActivatedRoute, private router: Router, private scheduleService: ScheduleserviceService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private scheduleService: ScheduleserviceService, private http: HttpClient) { }
 
   ngOnInit() {
-    // this.route.params.subscribe(params => {
-    //   this.title = params['index'] //mengambil index di link address + karena di approuting pakai index
-    //   this.scheduleService.ReadGame(this.image, this.title, this.desc).subscribe(
-    //     (data) => {
-    //       this.image = data.image;
-    //       this.title = data.title;
-    //       this.desc = data.desc;
-    //     }
-    //   );
-    // });
+    this.LoadData();
   }
 
-  
-  
+  LoadData() {
+    this.http.get(this.link + "games.php").subscribe((data: any) => {
+      this.games = data;
+    });
+  }
   changeTeam(game: Game) {
     this.router.navigate(['/home/games/teamdetails'],
       { state: { selectedGame: game } });
