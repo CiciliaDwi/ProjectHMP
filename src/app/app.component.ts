@@ -18,7 +18,7 @@ export class AppComponent {
     this.fname = localStorage.getItem("app_fname") ?? ''
     this.username = localStorage.getItem("app_username") ?? ''
     this.lname = localStorage.getItem("app_lname") ?? ''
-
+    this.fname = this.scheduleService.fname;
     if(this.fname != '') {
       this.router.navigate(['/home/games']);
     }

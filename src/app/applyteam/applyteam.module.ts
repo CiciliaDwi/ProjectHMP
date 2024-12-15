@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ApplyteamPageRoutingModule } from './applyteam-routing.module';
 
-import { ApplyteamPage } from './applyteam.page';
+import { ApplyTeamPage } from './applyteam.page';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { ApplyteamPage } from './applyteam.page';
     IonicModule,
     ApplyteamPageRoutingModule
   ],
-  declarations: [ApplyteamPage]
+  declarations: [ApplyTeamPage]
 })
 export class ApplyteamPageModule {}

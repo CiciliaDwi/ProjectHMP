@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ApplyteamPage } from './applyteam.page';
+import { ApplyTeamPage } from './applyteam.page';
+import { NewapplyteamPage } from '../newapplyteam/newapplyteam.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ApplyteamPage
+    component: ApplyTeamPage
+  },
+  {
+    path: 'newapplyteam',
+    component: NewapplyteamPage // Halaman yang ingin kamu tuju
   }
 ];
 

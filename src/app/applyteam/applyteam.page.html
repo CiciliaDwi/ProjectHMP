@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Apply Team</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <!-- Menampilkan ID Member -->
+  <ion-item>
+    <ion-label>Member ID: {{ idmember }}</ion-label>
+  </ion-item>
+  
+  <!-- Menampilkan Jumlah Proposal -->
+  <ion-item>
+    <ion-label>Proposals Length: {{ proposals.length }}</ion-label>
+  </ion-item>
 
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <ion-card>
-      <ion-item>
-        Proposal List
+  <!-- Jika proposal ada, tampilkan daftar -->
+  <ng-container *ngIf="proposals && proposals.length > 0; else noProposals">
+    <ion-list>
+      <ion-item *ngFor="let proposal of proposals">
+        <ion-label>
+          <h2>Game: {{ proposal.game_name }}</h2>
+          <h3>Team: {{ proposal.team_name }}</h3>
+          <p>Description: {{ proposal.description }}</p>
+          <p>Status: {{ proposal.status }}</p>
+        </ion-label>
       </ion-item>
-      <ion-button color="warning" expand="full" routerLink="/newapplyteam"><ion-icon name="add"
-        slot="start"></ion-icon>Add Proposal</ion-button>
-    </ion-card>
-  </div>
+    </ion-list>
+  </ng-container>
+
+  <!-- Jika proposal kosong -->
+  <ng-template #noProposals>
+    <ion-item>
+      <ion-label>No proposals found.</ion-label>
+    </ion-item>
+  </ng-template>
+
+  <!-- Tombol untuk menambahkan proposal -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openApplyForm()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

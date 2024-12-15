@@ -21,7 +21,7 @@ export class GamesPage implements OnInit {
   title = ""
   desc = ""
   games: Game[] = [];
-  link = "https://ubaya.xyz/hybrid/160422148/"
+  link = "https://ubaya.xyz/hybrid/160422148/projecthmp/"
 
   constructor(private route: ActivatedRoute, private router: Router, private scheduleService: ScheduleserviceService, private http: HttpClient) { }
 

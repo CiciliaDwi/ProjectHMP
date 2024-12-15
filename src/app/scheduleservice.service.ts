@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScheduleserviceService {
 
-link = "https://ubaya.xyz/hybrid/160422148/";
+link = "https://ubaya.xyz/hybrid/160422148/projecthmp/";
 
+  id = localStorage.getItem("app_id") ?? ''
+  fname = localStorage.getItem("app_fname") ?? ''
+  username = localStorage.getItem("app_username") ?? ''
+  lname = localStorage.getItem("app_lname") ?? ''
   constructor(private http: HttpClient) { }
 
   login(p_username: string, p_password: string) {
@@ -22,8 +27,21 @@ link = "https://ubaya.xyz/hybrid/160422148/";
       this.link + "login_project.php", urlEncodedData, { headers });
   }
 
+  getFullName(): string {
+    return `${this.fname} ${this.lname}`;
+  }
+
   ReadGame(): Observable<any> {
     return this.http.get(this.link + "games.php");
+  }
+
+  ReadProposals(idmember: number): Observable<any> {
+    return this.http.get(this.link + "proposal.php?idmember=${this.id}");
+  }
+  
+  SubmitProposal(data: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(this.link + 'join_proposal.php', data, { headers }); // Endpoint untuk mengirim proposal
   }
 
   //hapus schedules, pindah ke database 
